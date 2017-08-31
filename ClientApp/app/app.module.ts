@@ -9,6 +9,9 @@ import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+
+import { MakeService } from './services/make.service';
 
 @NgModule({
     declarations: [
@@ -16,7 +19,8 @@ import { CounterComponent } from './components/counter/counter.component';
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        VehicleFormComponent
     ],
     imports: [
         CommonModule,
@@ -27,9 +31,11 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'vehicles/new', component: VehicleFormComponent },
             { path: '**', redirectTo: 'home' }
         ])
-    ]
+    ],
+    providers:[MakeService]
 })
 export class AppModuleShared {
 }
